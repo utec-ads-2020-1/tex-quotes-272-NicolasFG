@@ -1,0 +1,3 @@
+N:/Ejercicios_C++/TEX_Quotes_Uva/cmake-build-debug/CMakeFiles/TEX_Quotes_Uva.dir
+N:/Ejercicios_C++/TEX_Quotes_Uva/cmake-build-debug/CMakeFiles/edit_cache.dir
+N:/Ejercicios_C++/TEX_Quotes_Uva/cmake-build-debug/CMakeFiles/rebuild_cache.dir
