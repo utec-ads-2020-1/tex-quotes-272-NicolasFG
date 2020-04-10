@@ -2,33 +2,43 @@
 #include <string>
 
 using namespace std;
+
 typedef string Alfabeto;
 
-int main(){
-    Alfabeto Entrada;
-    char tipo1 = '`';
-    char tipo3 = 39;
+void maquina(Alfabeto Entrada, const Alfabeto& tilde, const Alfabeto& apostrofo){
 
-    bool Primer_caracter = true;
-    while(getline(cin,Entrada)) {
+    bool C_P = true;
 
-        for (auto it = Entrada.begin(); it <= Entrada.end(); it++) {
-            if (*it == '"') {
-                if (Primer_caracter) {
-                    Entrada.erase(it);
-                    Entrada.insert(it,tipo1);
-                    //Entrada.insert(it + 1,tipo1);
-                    Primer_caracter = false;
+    while(getline (cin,Entrada)) {
+
+        for(int i=0;i<Entrada.size();i++){
+
+            if(Entrada[i]=='"'){
+
+                if(C_P){
+                    Entrada.erase(i,1);
+
+                    Entrada.insert(i,tilde);
+
+                    C_P=false;
                 }
-                else {
-                    Entrada.erase(it);
-                    Entrada.insert(it,tipo3);
-                    //Entrada.insert(it+1,tipo3);
-                    Primer_caracter= true;
+                else{
+                    Entrada.erase(i,1);
+
+                    Entrada.insert(i,apostrofo);
+
+                    C_P=true;
                 }
             }
         }
-        cout << Entrada << endl;
+        cout<<Entrada<<endl;
     }
+}
+
+int main(){
+    Alfabeto Entrada, tilde = "``", apostrofe = "''";
+
+    maquina(Entrada,tilde,apostrofe);
+
     return 0;
 }
